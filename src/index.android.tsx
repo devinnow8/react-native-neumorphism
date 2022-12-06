@@ -10,6 +10,7 @@ type NeumorphismProps = {
   style?: ViewStyle;
   disabled?: boolean;
   children?: React.ReactNode;
+  childrenStyles ?: ViewStyle
 };
 
 const NeumorphismCardView = requireNativeComponent<NeumorphismProps>(
@@ -40,7 +41,7 @@ export default (props: NeumorphismProps) => {
           }}
         />
       )}
-      <View style={{ borderRadius: props.radius, overflow: 'hidden' }}>
+      <View style={{ borderRadius: props.radius , ...props.childrenStyles}}>
         {props.children}
       </View>
     </View>
